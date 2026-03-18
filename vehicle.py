@@ -10,21 +10,22 @@ class Vehicle:
         print("A", self.colour, "vehicle going", self.speed,"mph")
 
 class Car(Vehicle):
+    def __init__(self, colour, speed):
+        super().__init__(colour, speed)
+        self.num_wheels = 4
     def describe(self):
-        print("A", self.colour, "car going", self.speed,"mph")
+        print("A", self.colour, "car with", self.num_wheels, "wheels going", self.speed, "mph")
 
 class Bike(Vehicle):
+    def __init__(self, colour, speed):
+        super().__init__(colour, speed)
+        self.num_wheels = 2
     def describe(self):
-        print("A", self.colour, "bike going", self.speed,"mph")
+        print("A", self.colour, "bike with", self.num_wheels, "wheels going", self.speed,"mph")
 
-v1 = Vehicle("white", 0)
-car1 = Car("red", 30)
-bike1 = Bike("green", 10)
+car1 = Car("red", 0)
+bike1 = Bike("green", 0)
 
 car1.accelerate()
-bike1.accelerate()
-bike1.accelerate()
-
-v1.describe() #0 mph
-car1.describe() #40 mph
-bike1.describe() #30 mph < a fast bike!
+car1.describe() #10 mph
+bike1.describe() #0 mph
